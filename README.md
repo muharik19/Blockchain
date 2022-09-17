@@ -4,6 +4,9 @@ git clone https://github.com/muharik19/Blockchain.git
 cd web3_py_simple_storage
 ```
 2. Setup a [local ganache chain](https://www.trufflesuite.com/ganache)
+3. Install requirements
+```bash
+pip install
 ```
 4. Set your private keys and address, and adjust this section appropriately:
 ```python
