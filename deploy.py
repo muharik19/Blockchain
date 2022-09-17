@@ -91,6 +91,6 @@ signed_store_txn = w3.eth.account.sign_transaction(
     store_transaction, private_key=private_key
 )
 send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.rawTransaction)
-print("Updating stored Value...")
+print("Updating Stored Value...")
 tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
 print(simple_storage.functions.retrieve().call())
