@@ -37,7 +37,9 @@ bytecode = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["evm"
 ]["object"]
 
 # get abi
-abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
+abi = json.loads(
+    compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["metadata"]
+)["output"]["abi"]
 
 # for connecting to ganache
 w3 = Web3(Web3.HTTPProvider(os.getenv("PROVIDER")))
