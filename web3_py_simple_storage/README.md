@@ -1,7 +1,7 @@
 1. Clone this repo
 ```
 git clone https://github.com/muharik19/Blockchain.git
-cd demos/web3_py_simple_storage
+cd web3_py_simple_storage
 ```
 2. Setup a [local ganache chain](https://www.trufflesuite.com/ganache)
 3. Install requirements
