@@ -64,7 +64,9 @@ def fund_with_link(
 ):  # 0.1 LINK
     account = account if account else get_account()
     link_token = link_token if link_token else get_contract("link_token")
-    tx = link_token.transfer(contract_address, amount, {"from": account})
+    tx = link_token.transfer(
+        contract_address, amount, {"from": account, "gas_limit": 100000}
+    )
     # link_token_contract = interface.LinkTokenInterface(link_token.address)
     # tx = link_token_contract.transfer(contract_address, amount, {"from": account})
     tx.wait(1)

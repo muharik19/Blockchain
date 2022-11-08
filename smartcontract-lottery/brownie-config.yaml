@@ -15,10 +15,10 @@ networks:
     keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
     fee: 100000000000000000
   goerli:
-    vrf_coordinator: "0x2bce784e69d2Ff36c71edcB9F88358dB0DfB55b4"
+    vrf_coordinator: "0x2ca8e0c643bde4c2e08ab1fa0da3401adad7734d"
     eth_usd_price_feed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e"
     link_token: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
-    keyhash: "0x0476f9a745b61ea5c0ab224d3a6e4c99f0b02fce4da01143a4f70aa80ae76e8a"
+    keyhash: "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15"
     fee: 100000000000000000
     verify: True
   mainnet-fork:
