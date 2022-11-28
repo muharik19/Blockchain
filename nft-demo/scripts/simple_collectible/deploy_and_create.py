@@ -1,7 +1,5 @@
-from scripts.helpful_scripts import get_account
+from scripts.helpful_scripts import get_account, OPENSEA_URL
 from brownie import SimpleCollectible
-
-OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 
 
 def deploy_and_create():
