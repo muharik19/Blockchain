@@ -1,4 +1,6 @@
-1. Install Brownie
+1. Setup a [local ganache chain](https://www.trufflesuite.com/ganache)
+
+2. Install Brownie
 
 ```bash
 python -m pip install --user pipx
@@ -11,12 +13,12 @@ Or, if that doesn't work, via pip
 pip install eth-brownie
 ```
 
-2. Clone this
+3. Clone this
 ```bash
 git clone https://github.com/muharik19/Blockchain.git
 cd brownie_simple_storage
 ```
-3. Add your metamask to the brownie accounts at the `0` index
+4. Add your metamask to the brownie accounts at the `0` index
 
 ```bash
 brownie accounts new 0
@@ -34,20 +36,37 @@ and comment the line:
 account = accounts[0]
 ```
 
-4. Testing
+5. Testing
 
 ```bash
 brownie test
 ```
 
-5. Running scripts
+6. Running scripts development
 
 ```bash
-brownie run scripts/deploy.py
+brownie run scripts/deploy.py --network development
 ```
 
-6. Deploy to a testnet
+7. Check network list
 
+```bash
+brownie networks list
+```
+
+8. Create account new
+
+```bash
+brownie accounts new name-account
+```
+
+9. Check accounts list
+
+```bash
+brownie accounts list
+```
+
+10. Deploy to a testnet
 Add your `WEB3_INFURA_PROJECT_ID` from [Infura](https://infura.io/) to your `.env` and run 
 ```bash
 source .env
@@ -63,9 +82,14 @@ account = accounts.add(config["wallets"]["from_key"])
 # account = accounts[0]
 ```
 
-Then run:
-```
-brownie run scripts/deploy.py --network goerli
+11. Check active endpoints infura
+- [Infura active endpoints](https://developer.metamask.io/key/active-endpoints)
+
+10. Running scripts sepolia
+
+```bash
+# network list Ethereum Infura
+brownie run scripts/deploy.py --network sepolia
 ```
 
 Make sure you have some testnet ETH. You can find faucets in the [Chainlink Documenatation](https://docs.chain.link/docs/link-token-contracts/)
