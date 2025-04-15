@@ -50,23 +50,23 @@ private_key = os.getenv("PRIVATE_KEY")
 # Create the contract in python
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
 # Get the latest transaction
-nonce = w3.eth.getTransactionCount(my_address)
+nonce = w3.eth.get_transaction_count(my_address)
 # 1. Build a transaction
 # 2. Sign a transaction
 # 3. Send a transaction
-transaction = SimpleStorage.constructor().buildTransaction(
+transaction = SimpleStorage.constructor().build_transaction(
     {
         "from": my_address,
         "nonce": nonce,
         "chainId": int(chain_id),
         "gas": 6721975,
-        "gasPrice": w3.toWei("20", "gwei"),
+        "gasPrice": w3.to_wei("20", "gwei"),
     }
 )
 signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
 # Send this signed transaction
 print("Deploying Contract!")
-tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+tx_hash = w3.eth.send_raw_transaction(signed_txn.raw_transaction)
 print("Waiting for transaction to finish...")
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f"Done! Contract deployed to {tx_receipt.contractAddress}")
@@ -80,19 +80,19 @@ simple_storage = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 
 # Initial value of favorite number
 print(f"Initial Stored Value {simple_storage.functions.retrieve().call()}")
-store_transaction = simple_storage.functions.store(15).buildTransaction(
+store_transaction = simple_storage.functions.store(15).build_transaction(
     {
         "from": my_address,
         "nonce": nonce + 1,
         "chainId": int(chain_id),
         "gas": 6721975,
-        "gasPrice": w3.toWei("20", "gwei"),
+        "gasPrice": w3.to_wei("20", "gwei"),
     }
 )
 signed_store_txn = w3.eth.account.sign_transaction(
     store_transaction, private_key=private_key
 )
-send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.rawTransaction)
+send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.raw_transaction)
 print("Updating Stored Value...")
 tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
 print(simple_storage.functions.retrieve().call())
