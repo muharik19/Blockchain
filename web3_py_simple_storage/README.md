@@ -6,6 +6,15 @@ cd web3_py_simple_storage
 2. Setup a [local ganache chain](https://www.trufflesuite.com/ganache)
 3. Install requirements
 ```bash
+pip install setuptools
+```
+
+```bash
+# If you're using a specific version of Python (like python3.13), you might want to use:
+python3.13 -m pip install setuptools
+```
+
+```bash
 pip install -r requirements.txt
 ```
 4. Set your private keys and address, and adjust this section appropriately:
