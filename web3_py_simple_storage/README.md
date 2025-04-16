@@ -15,7 +15,7 @@ python3.13 -m pip install setuptools
 ```
 
 ```bash
-# If you're using a specific version of Python (like python3.13), you might want to use:
+# Or if you're using python to invoke version 3.13:
 python -m pip install setuptools
 ```
 
